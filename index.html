@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Nova Student Array Management System
+</title>
+
+
+
+<!-- Google Font -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+
+
+<!-- HEADER -->
+
+<header class="navbar">
+
+
+<div class="logo">
+
+<i class="fa-solid fa-layer-group"></i>
+ Arrays
+
+</div>
+
+
+
+<nav>
+
+<a href="#dashboard">
+Dashboard
+</a>
+
+
+<a href="#students">
+Students
+</a>
+
+
+<a href="#about">
+About Arrays
+</a>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+
+<h1>
+
+Student Management System
+
+</h1>
+
+
+
+<p>
+
+A real-world application demonstrating the use of
+<strong>Arrays</strong>
+as a data structure.
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- DASHBOARD -->
+
+<section id="dashboard" class="dashboard">
+
+
+
+<div class="card">
+
+
+<i class="fa-solid fa-users"></i>
+
+
+<h3>Total Students</h3>
+
+
+<p id="totalStudents">
+0
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<i class="fa-solid fa-chart-line"></i>
+
+
+<h3>Average Mark</h3>
+
+
+<p id="averageMark">
+0
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<i class="fa-solid fa-arrow-up"></i>
+
+
+<h3>Highest Mark</h3>
+
+
+<p id="highestMark">
+0
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<i class="fa-solid fa-arrow-down"></i>
+
+
+<h3>Lowest Mark</h3>
+
+
+<p id="lowestMark">
+0
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- STUDENT MANAGEMENT -->
+
+<section id="students" class="container">
+
+
+
+<div class="glass-box">
+
+
+<h2>
+
+<i class="fa-solid fa-user-plus"></i>
+
+Add Student
+
+</h2>
+
+
+
+
+<div class="form">
+
+
+<input 
+id="studentNumber"
+type="number"
+placeholder="Student Number e.g 21">
+
+
+
+<input
+id="studentName"
+type="text"
+placeholder="Student Name">
+
+
+
+<input
+id="studentMark"
+type="number"
+placeholder="Mark (0-100)">
+
+
+
+
+
+<button id="addBtn">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Student
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="glass-box">
+
+
+
+<h2>
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+Search Student
+
+</h2>
+
+
+
+
+<input
+id="searchID"
+type="text"
+placeholder="Search ID, Number or Name">
+
+
+
+<button onclick="searchStudent()">
+
+<i class="fa-solid fa-search"></i>
+
+Search
+
+</button>
+
+
+
+<div id="searchResult">
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="glass-box">
+
+
+
+<h2>
+
+<i class="fa-solid fa-database"></i>
+
+Student Records
+
+</h2>
+
+
+
+
+<button class="reset-btn"
+onclick="resetStudents()">
+
+<i class="fa-solid fa-rotate"></i>
+
+Reset Demo Data
+
+</button>
+
+
+
+
+
+<table>
+
+
+<thead>
+
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Mark</th>
+
+<th>Action</th>
+
+</tr>
+
+
+</thead>
+
+
+
+<tbody id="studentTable">
+
+
+</tbody>
+
+
+
+</table>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ARRAY EXPLANATION -->
+
+<section id="about" class="about">
+
+
+
+<div class="glass-box">
+
+
+
+<h2>
+
+<i class="fa-solid fa-code"></i>
+
+How Arrays Are Used
+
+</h2>
+
+
+
+<p>
+
+Arrays are used to store multiple values of the same type
+under one variable name.
+
+</p>
+
+
+
+<p>
+
+This application uses arrays to store student information:
+
+</p>
+
+
+
+
+<ul>
+
+
+<li>
+<strong>studentIDs[]</strong>
+stores student identification numbers
+</li>
+
+
+<li>
+<strong>studentNames[]</strong>
+stores student names
+</li>
+
+
+<li>
+<strong>studentMarks[]</strong>
+stores student marks
+</li>
+
+
+</ul>
+
+
+
+
+
+<p>
+
+Example:
+
+</p>
+
+
+
+<pre>
+
+studentIDs[0] = "PS/ITC/24/0001"
+
+studentNames[0] = "Kwame Mensah"
+
+studentMarks[0] = 78
+
+</pre>
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<footer>
+
+
+<p>
+
+Built with HTML, CSS, JavaScript and Arrays
+
+</p>
+
+
+</footer>
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+
+</html>
